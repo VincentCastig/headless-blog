@@ -1,0 +1,30 @@
+// Container styles
+.container {
+    max-width: 1320px;  // Overall width including padding
+    padding: 0 20px;   // 20px padding on both sides
+    margin: 0 auto;    // Center the container horizontally
+  }
+  
+  // Row styles
+  .row {
+    display: flex;               // Use flexbox for the row
+    margin-left: -15px;          // Negative margin to offset the padding
+    width: calc(100% + 30px);    // Compensate for the gutter width
+    flex-wrap: wrap;
+  }
+  
+  // Column styles
+  .col {
+    flex: 1;
+    padding: 15px;         // Right padding for gutter
+    box-sizing: border-box;      // Include padding in width calculations
+  }
+  
+// Generate grid columns using a loop
+@for $i from 1 through 12 {
+    .col-#{$i} {
+      // Calculate the percentage width based on the number of columns
+      min-width: (100% / 12) * $i;
+      max-width: (100% / 12) * $i;
+    }
+  }
