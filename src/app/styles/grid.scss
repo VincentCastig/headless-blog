@@ -17,7 +17,6 @@
   .col {
     flex: 1;
     padding: 15px;         // Right padding for gutter
-    box-sizing: border-box;      // Include padding in width calculations
   }
   
 // Generate grid columns using a loop

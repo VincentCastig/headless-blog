@@ -3,7 +3,7 @@ import './styles/styles.scss';
 
 const lato = Lato({
   subsets: ['latin'],
-  weights: ['400', '700', '900'],
+  weight: ['400', '700', '900'],
   variable: '--font-lato',
 });
 
@@ -19,7 +19,7 @@ export const metadata = {
 const Rootlayer = ({ children }) => (
   <html lang="en">
     <body className={`${openSans.className} ${lato.variable} ${openSans.variable}`}>
-        {/* Your content goes here */}
+    {children}
       </body>
   </html>
 );
