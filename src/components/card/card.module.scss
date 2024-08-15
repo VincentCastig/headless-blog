@@ -1,0 +1,62 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 21px 21px rgba(0, 0, 0, 0.07); // Adjusted shadow according to provided description
+    background-color: #fff;
+  }
+  
+  .cardImageWrap {
+    flex: 1; // Flex-grow to fill available space
+    min-width: 50%;
+    display: flex;
+  }
+  
+  .cardImage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 100%;
+
+    Image {
+        object-fit: cover;
+      }
+  }
+  
+  .cardContent {
+    flex: 1; // Flex-grow to fill available space
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    background-color: #fff;
+  }
+
+
+  
+  .cardTitle {
+    font-size: 1.5rem; // Equivalent to H3
+    font-weight: bold;
+    margin-bottom: 20px; // Added bottom margin
+  }
+  
+  .cardText {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .cardHeading {
+    font-size: 1.125rem; // Equivalent to H6
+    margin-bottom: 10px;
+    color: orange; // Placeholder color
+  }
+
+  .summary{
+    font-weight: 600;
+  }
+  
+ 
+  
