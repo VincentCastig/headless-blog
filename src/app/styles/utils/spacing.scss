@@ -17,7 +17,7 @@ $paddingBottom: 80; // You can add more values separated by commas, e.g., 80, 10
     }
 }
 
-$marginBottom: 30, 10, 20; // You can add more values separated by commas, e.g., 80, 100, 120
+$marginBottom: 30, 10, 20, 50; // You can add more values separated by commas, e.g., 80, 100, 120
 
 // Iterate through each value in the list
 @each $mb in $marginBottom {
