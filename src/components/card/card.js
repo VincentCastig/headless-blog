@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import styles from './card.module.scss';
 import Button from '../button/button';
+import ConditionalRenderer from '../conditional-renderer';
 // import { iconTypes } from '../ButtonIcon/ButtonIcon';
 
+
  
-const Card = ({buttonHref, buttonText}) => {
+const Card = ({buttonText, className, label, title, summary, href}) => {
   return (
+    <div className={`${styles.cardWrap} ${className || ''}`}>
     <div className={`${styles.card}`}>
       <div className={styles.cardImageWrap}>
         <div className={styles.cardImage}>
@@ -15,14 +18,23 @@ const Card = ({buttonHref, buttonText}) => {
         </div>
       </div>
       <div className={styles.cardContent}>
-        <div className={`${styles.label} h6 mb-10 c-orange`}>Product Reviews</div>
-        <h3 className={`${styles.cardTitle} h3 mb-20`}>Title of Your Content</h3>
-        <p className={styles.summary}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tortor pretium convallis.
+        <ConditionalRenderer condition={label}>
+        <div className={`${styles.cardLabel} h6 mb-10 c-orange`}>{label}</div>
+        </ConditionalRenderer>
+        <ConditionalRenderer condition={title}>
+        <h3 className={`${styles.cardTitle} h3 mb-20`}>{title}</h3>
+        </ConditionalRenderer>
+        <ConditionalRenderer condition={summary}>
+        <p className={styles.cardSummary}>{summary}
         </p>
-          <Button href={buttonHref}>
+        </ConditionalRenderer>
+        <ConditionalRenderer condition={href}>
+          <Button href={href}>
             Read More
           </Button> 
+          </ConditionalRenderer>
       </div>
+    </div>
     </div>
   );
 };

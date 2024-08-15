@@ -1,3 +1,6 @@
+.cardWrap{
+    container-type: inline-size;
+}
 .card {
     display: flex;
     flex-direction: row;
@@ -30,7 +33,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 30px;
+    padding: 30px 30px 30px 0;
     background-color: #fff;
   }
 
@@ -54,9 +57,33 @@
     color: orange; // Placeholder color
   }
 
-  .summary{
+  .cardLabel{
+    font-size: 18px;
+  }
+
+  .cardSummary{
     font-weight: 600;
   }
   
- 
+ @container(max-width: 700px) {
+    .card{
+        flex-direction: column;
+    }
+
+    .cardContent {
+        padding: 0 30px 30px;
+      }
+
+      .cardLabel{
+        font-size: 16px;
+      }
+
+      .cardTitle {
+        font-size: 24px; 
+      }
+
+      .cardSummary{
+        display: none;
+      }
+ } 
   
